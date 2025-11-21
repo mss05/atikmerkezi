@@ -3,270 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İstatistikler - Gaziantep Dönüşüm Hareketi</title>
-    <style>
-        /* --- CSS STİLLERİ --- */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #2e7d32; /* Koyu Yeşil */
-            color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        header nav a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        header nav a:hover {
-            color: white;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .statistics-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            padding: 3rem;
-            text-align: center;
-        }
-
-        .statistics-card h1 {
-            color: #2e7d32;
-            margin-bottom: 1rem;
-        }
-
-        .intro-text {
-            margin-bottom: 3rem;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .stat-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-around;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            flex: 1 1 300px; /* Mobilde alt alta, geniş ekranda yan yana */
-            padding: 2rem;
-            background: #f9fbe7; /* Çok açık yeşil arka plan */
-            border-radius: 8px;
-            border: 1px solid #e6ee9c;
-        }
-
-        .stat-item h2 {
-            color: #1b5e20;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* --- Progress Bar Stilleri --- */
-        .progress-container {
-            width: 100%;
-            background-color: #e0e0e0;
-            border-radius: 25px;
-            height: 35px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .progress-bar {
-            height: 100%;
-            width: 0%; /* JS ile güncellenecek */
-            background: linear-gradient(90deg, #4caf50, #81c784); /* Yeşil degrade */
-            border-radius: 25px;
-            transition: width 2s cubic-bezier(0.22, 1, 0.36, 1); /* Yumuşak geçiş */
-        }
-
-        .progress-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #333; /* Koyu renk metin, açık barın üzerinde okunur */
-            font-weight: bold;
-            font-size: 1.2rem;
-            z-index: 2;
-            text-shadow: 0 0 2px rgba(255,255,255,0.7); /* Okunabilirliği artırmak için gölge */
-        }
-
-        /* --- Counter Stilleri --- */
-        .counter-container {
-            font-size: 4rem;
-            font-weight: 800;
-            color: #2e7d32;
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .counter-unit {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-left: 10px;
-            color: #555;
-        }
-        
-        .stat-description {
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: #263238; /* Koyu gri/mavi */
-            color: #cfd8dc;
-            margin-top: 4rem;
-        }
-
-        /* Basit Responsive Ayar */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            header nav {
-                margin-top: 1rem;
-            }
-            header nav a {
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
-            .container {
-                padding: 0 1rem;
-                margin: 2rem auto;
-            }
-             .statistics-card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <title>Gaziantep Dönüşüm Yuvası | Geleceği Dönüştürüyoruz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="Gaziantep Dönüşüm Hareketi Logo" style="height: 60px; vertical-align: middle;">
-        <nav>
-            <a href="#">Ana Sayfa</a>
-            <a href="#">Hakkımızda</a>
-            <a href="#">Fabrikalarımız</a>
-            <a href="#" class="active">İstatistikler</a>
-            <a href="#">İletişim</a>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Gaziantep Dönüşüm Yuvası" class="nav-logo">
+                <span class="nav-title">Gaziantep Dönüşüm Yuvası</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Ana Sayfa</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#projeler">Projelerimiz</a></li>
+                <li><a href="#istatistikler">Veriler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-    <main class="container">
-        <section class="statistics-card">
-            <h1>Dönüşüm Rakamlarımızla Şeffaflık</h1>
-            <p class="intro-text">Gaziantep Organize Sanayi Bölgesi'ndeki iş ortaklarımız ve kahraman ustalarımızla birlikte yarattığımız çevresel etkinin güncel verileri.</p>
+    <section id="hero" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content container">
+            <h1>Bu Emeği Görünür Kılıyoruz</h1>
+            <p>Gaziantep'in sürdürülebilir geleceği için görünmeyen kahramanlarla çalışıyor, sosyal adaleti ve çevresel sorumluluğu birleştiriyoruz.</p>
+            <a href="#projeler" class="btn-primary">Projelerimizi Keşfet</a>
+        </div>
+    </section>
 
-            <div class="stat-row">
-                <div class="stat-item">
-                    <h2>Geri Dönüştürülen Ürün Hedefi</h2>
+    <section id="istatistikler" class="stats-section">
+        <div class="container">
+            <div class="stats-header">
+                <h2>Dönüşüm Rakamlarımızla Şeffaflık</h2>
+                <p>Gaziantep Organize Sanayi Bölgesi'ndeki iş ortaklarımız ve kahraman ustalarımızla birlikte yarattığımız çevresel etkinin güncel verileri.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Geri Dönüştürülen Ürün Hedefi</h3>
                     <div class="progress-container">
-                        <div class="progress-bar" id="progressBar" data-percentage="82"></div>
-                        <span class="progress-text" id="progressText">0%</span>
+                        <div class="progress-bar" data-target="82">
+                            <span class="progress-text">82%</span>
+                        </div>
                     </div>
-                    <p class="stat-description">Yıllık 75.000 ton hedefimizin %82'sine şimdiden ulaştık!</p>
+                    <p class="stat-desc">Yıllık 75.000 ton hedefimizin %82'sine şimdiden ulaştık!</p>
                 </div>
 
-                <div class="stat-item">
-                    <h2>Toplam Toplanan Atık Miktarı</h2>
-                    <div class="counter-container">
-                        <span class="counter-value" data-target="61500" id="wasteCounter">0</span>
-                        <span class="counter-unit">TON</span>
+                <div class="stat-card">
+                    <h3>Toplam Toplanan Atık Miktarı</h3>
+                    <div class="number-counter">
+                        <span class="count" data-target="61500">0</span>
+                        <span class="unit">TON</span>
                     </div>
-                    <p class="stat-description">Proje başlangıcından bu yana ekonomiye kazandırılan toplam atık.</p>
+                    <p class="stat-desc">Proje başlangıcından bu yana ekonomiye kazandırılan toplam atık.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2023 Gaziantep Dönüşüm Hareketi. Tüm Hakları Saklıdır. | Bir Toplumsal Kalkınma Projesi</p>
+    <section id="hakkimizda" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Neden Buradayız?</h2>
+            <p class="about-text">
+                Gaziantep'te geri dönüşüm sistemi, büyük ölçüde görünmeyen emek üzerine kuruludur. Mülteci işçiler, kadınlar ve çocuklar bu zincirin en önemli halkalarıdır[cite: 322, 323]. Biz, "Policy Table: From Recycling to Future" projesi kapsamında bu emeği görünür kılmayı, işçilere saygınlık kazandırmayı ve kayıt dışılığı önleyerek güvenli istihdam alanları yaratmayı hedefliyoruz[cite: 325, 333].
+            </p>
+        </div>
+    </section>
+
+    <section id="projeler" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Dönüşüm Projelerimiz</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <img src="isci-egitim.jpg" alt="Eğitim ve İstihdam" class="project-img">
+                    <div class="project-info">
+                        <h3>OSB Atık Merkezleri & Eğitim</h3>
+                        <p>Geri dönüşüm işçilerini kapsamlı eğitimlerle sertifikalandırıyor ve OSB'deki 5 bölgede kurulan zorunlu atık merkezlerinde resmi olarak istihdam ediyoruz. Onlara hak ettikleri saygınlığı geri veriyoruz[cite: 312, 341].</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="cocuk-atolye.jpg" alt="Çocuk Atölyeleri" class="project-img">
+                    <div class="project-info">
+                        <h3>Geleceğin Atölyeleri</h3>
+                        <p>Köy Enstitüleri modelini modernize ediyoruz. Çocuklarımızı riskli çalışma alanlarından uzaklaştırıp, üretim ve çevre bilinci kazanacakları yaratıcı atölyelerle buluşturuyoruz[cite: 313, 344].</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="kadin-uretim.jpg" alt="Kadın Üretimi" class="project-img">
+                    <div class="project-info">
+                        <h3>Kadın Üretim & Dijital Pazar</h3>
+                        <p>Belediye kurslarında dikiş, nakış ve üretim yapan kadınlarımıza dijital pazarlama eğitimi veriyoruz. El emekleri, sosyal medya aracılığıyla doğrudan ekonomiye kazandırılıyor[cite: 314, 349].</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="iletisim">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h3>Gaziantep Dönüşüm Yuvası</h3>
+                <p>Sürdürülebilir bir gelecek ve adil bir toplum için.</p>
+            </div>
+            <div class="footer-right">
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+                <p>&copy; 2025 Gaziantep Dönüşüm Yuvası. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- Progress Bar Animasyonu ---
-            const progressBar = document.getElementById('progressBar');
-            const progressText = document.getElementById('progressText');
-            const targetPercentage = parseInt(progressBar.dataset.percentage);
-
-            setTimeout(() => { // Sayfa yüklendikten kısa bir süre sonra başlasın
-                progressBar.style.width = targetPercentage + '%';
-                
-                let currentPercentage = 0;
-                const interval = setInterval(() => {
-                    if (currentPercentage >= targetPercentage) {
-                        clearInterval(interval);
-                        progressText.textContent = targetPercentage + '%'; // Son değeri sabitle
-                    } else {
-                        currentPercentage++;
-                        progressText.textContent = currentPercentage + '%';
-                    }
-                }, 2000 / targetPercentage); // Animasyon süresine (CSS'teki 2s) göre hızı ayarla
-
-            }, 300); // 300ms gecikme
-
-
-            // --- Counter Animasyonu ---
-            const wasteCounter = document.getElementById('wasteCounter');
-            const targetWaste = parseInt(wasteCounter.dataset.target);
-            const animationDuration = 2500; // milisaniye cinsinden toplam süre (2.5 saniye)
-            const frameDuration = 1000 / 60; // 60fps hedefi
-            const totalFrames = Math.round(animationDuration / frameDuration);
-            const increment = targetWaste / totalFrames;
-
-            let currentCount = 0;
-            let frame = 0;
-
-            const animateCounter = () => {
-                frame++;
-                currentCount += increment;
-                
-                if (frame >= totalFrames) {
-                    wasteCounter.textContent = targetWaste.toLocaleString('tr-TR'); // Türk formatında binlik ayıracı
-                } else {
-                    wasteCounter.textContent = Math.round(currentCount).toLocaleString('tr-TR');
-                    requestAnimationFrame(animateCounter);
-                }
-            };
-
-            setTimeout(() => {
-                requestAnimationFrame(animateCounter);
-            }, 300); // Progress bar ile aynı anda başlasın
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
