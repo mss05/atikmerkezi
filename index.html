@@ -3,130 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaziantep Dönüşüm Yuvası | Geleceği Dönüştürüyoruz</title>
+    <title>Ana Sayfa | Gaziantep Dönüşüm Hareketi</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo-container">
-                <img src="logo.png" alt="Gaziantep Dönüşüm Yuvası" class="nav-logo">
-                <span class="nav-title">Gaziantep Dönüşüm Yuvası</span>
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Logo" class="nav-logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#hero">Ana Sayfa</a></li>
-                <li><a href="#hakkimizda">Hakkımızda</a></li>
-                <li><a href="#projeler">Projelerimiz</a></li>
-                <li><a href="#istatistikler">Veriler</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="projeler.html">Projelerimiz</a></li>
+                <li><a href="istatistikler.html">Veriler</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </nav>
 
-    <section id="hero" class="hero">
+    <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content container">
-            <h1>Bu Emeği Görünür Kılıyoruz</h1>
-            <p>Gaziantep'in sürdürülebilir geleceği için görünmeyen kahramanlarla çalışıyor, sosyal adaleti ve çevresel sorumluluğu birleştiriyoruz.</p>
-            <a href="#projeler" class="btn-primary">Projelerimizi Keşfet</a>
+            <h1>Gaziantep Dönüşüm Hareketi</h1>
+            <p>Geleceği dönüştürmek için görünmeyen emeği görünür kılıyoruz.</p>
+            <a href="projeler.html" class="btn-primary">Projelerimizi İncele</a>
         </div>
     </section>
 
-    <section id="istatistikler" class="stats-section">
-        <div class="container">
-            <div class="stats-header">
-                <h2>Dönüşüm Rakamlarımızla Şeffaflık</h2>
-                <p>Gaziantep Organize Sanayi Bölgesi'ndeki iş ortaklarımız ve kahraman ustalarımızla birlikte yarattığımız çevresel etkinin güncel verileri.</p>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>Geri Dönüştürülen Ürün Hedefi</h3>
-                    <div class="progress-container">
-                        <div class="progress-bar" data-target="82">
-                            <span class="progress-text">82%</span>
-                        </div>
-                    </div>
-                    <p class="stat-desc">Yıllık 75.000 ton hedefimizin %82'sine şimdiden ulaştık!</p>
-                </div>
-
-                <div class="stat-card">
-                    <h3>Toplam Toplanan Atık Miktarı</h3>
-                    <div class="number-counter">
-                        <span class="count" data-target="61500">0</span>
-                        <span class="unit">TON</span>
-                    </div>
-                    <p class="stat-desc">Proje başlangıcından bu yana ekonomiye kazandırılan toplam atık.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="hakkimizda" class="about-section">
-        <div class="container">
-            <h2 class="section-title">Neden Buradayız?</h2>
-            <p class="about-text">
-                Gaziantep'te geri dönüşüm sistemi, büyük ölçüde görünmeyen emek üzerine kuruludur. Mülteci işçiler, kadınlar ve çocuklar bu zincirin en önemli halkalarıdır[cite: 322, 323]. Biz, "Policy Table: From Recycling to Future" projesi kapsamında bu emeği görünür kılmayı, işçilere saygınlık kazandırmayı ve kayıt dışılığı önleyerek güvenli istihdam alanları yaratmayı hedefliyoruz[cite: 325, 333].
-            </p>
-        </div>
-    </section>
-
-    <section id="projeler" class="projects-section">
-        <div class="container">
-            <h2 class="section-title">Dönüşüm Projelerimiz</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <img src="isci-egitim.jpg" alt="Eğitim ve İstihdam" class="project-img">
-                    <div class="project-info">
-                        <h3>OSB Atık Merkezleri & Eğitim</h3>
-                        <p>Geri dönüşüm işçilerini kapsamlı eğitimlerle sertifikalandırıyor ve OSB'deki 5 bölgede kurulan zorunlu atık merkezlerinde resmi olarak istihdam ediyoruz. Onlara hak ettikleri saygınlığı geri veriyoruz[cite: 312, 341].</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="cocuk-atolye.jpg" alt="Çocuk Atölyeleri" class="project-img">
-                    <div class="project-info">
-                        <h3>Geleceğin Atölyeleri</h3>
-                        <p>Köy Enstitüleri modelini modernize ediyoruz. Çocuklarımızı riskli çalışma alanlarından uzaklaştırıp, üretim ve çevre bilinci kazanacakları yaratıcı atölyelerle buluşturuyoruz[cite: 313, 344].</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="kadin-uretim.jpg" alt="Kadın Üretimi" class="project-img">
-                    <div class="project-info">
-                        <h3>Kadın Üretim & Dijital Pazar</h3>
-                        <p>Belediye kurslarında dikiş, nakış ve üretim yapan kadınlarımıza dijital pazarlama eğitimi veriyoruz. El emekleri, sosyal medya aracılığıyla doğrudan ekonomiye kazandırılıyor[cite: 314, 349].</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer id="iletisim">
-        <div class="container footer-content">
-            <div class="footer-left">
-                <h3>Gaziantep Dönüşüm Yuvası</h3>
-                <p>Sürdürülebilir bir gelecek ve adil bir toplum için.</p>
-            </div>
-            <div class="footer-right">
-                <ul class="social-links">
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                </ul>
-                <p>&copy; 2025 Gaziantep Dönüşüm Yuvası. Tüm hakları saklıdır.</p>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 Gaziantep Dönüşüm Hareketi - Tüm Hakları Saklıdır.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
