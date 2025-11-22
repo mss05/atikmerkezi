@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Sayfa | Gaziantep Dönüşüm</title>
+    <title>Gaziantep Dönüşüm Hareketi</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -15,42 +15,65 @@
             <div class="logo-wrapper"><img src="yeni-logo.png" alt="Logo" class="nav-logo"></div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="hakkimizda.html">Hikayemiz</a></li>
                 <li><a href="projeler.html">Eylemler</a></li>
-                <li><a href="istatistikler.html">Veriler</a></li>
+                <li><a href="istatistikler.html">Şeffaflık</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content container">
-            <span class="tagline">PUB301 PROJESİ</span>
-            <h1>Dönüşümün İşareti Gaziantep'te</h1>
-            <p>Gel, Gör, Tat, Dönüşüme Katkı Yap. Geri dönüşümün görünmeyen kahramanlarıyla tanışmaya hazır mısın?</p>
-            
-            <div class="hero-buttons">
-                <a href="https://mss05.github.io/vatandasuygulama/" target="_blank" class="btn-primary">
-                    <i class="fas fa-mobile-alt"></i> Vatandaş Uygulaması
-                </a>
-                <a href="hakkimizda.html" class="btn-outline">Hikayemizi Oku</a>
+    <section class="hero-slider">
+        
+        <div class="slide active" style="background-image: url('gaziantep1.jpg');">
+            <div class="overlay"></div>
+            <div class="slide-content container">
+                <span class="tagline">PUB301 PROJESİ</span>
+                <h1>Dönüşümün İşareti Gaziantep'te</h1>
+                <p>Görünmeyen emeği görünür kılıyor, geleceği birlikte dönüştürüyoruz.</p>
+                <div class="hero-buttons">
+                    <a href="#apps" class="btn-primary">Harekete Katıl</a>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section class="home-content container">
-        <h2 class="section-title">Farkındalık Hareketi</h2>
-        <div class="video-wrapper">
-            <video controls poster="hero-bg.jpg">
-                <source src="tramvay-reklam.mp4" type="video/mp4">
-                Tarayıcınız video etiketini desteklemiyor.
-            </video>
-            <p class="caption">Gaziantep sokaklarında dönüşümün sesi yankılanıyor.</p>
+        <div class="slide" style="background-image: url('gaziantep2.jpg');">
+            <div class="overlay"></div>
+            <div class="slide-content container">
+                <span class="tagline">KÜLTÜR VE DOĞA</span>
+                <h1>Gaziantep: Gel, Gör, Tat, Katkı Yap</h1>
+                <p>Gastronomi şehri şimdi de yeşil dönüşümün başkenti oluyor.</p>
+                <div class="hero-buttons">
+                    <a href="hakkimizda.html" class="btn-outline">Hikayemiz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('gaziantep3.jpg');">
+            <div class="overlay"></div>
+            <div class="slide-content container">
+                <span class="tagline">GİZLİ KAHRAMANLAR</span>
+                <h1>Geri Dönüşümün Kahramanları Burada!</h1>
+                <p>Sokak toplayıcıları değil, şehrin çevre mühendisleri onlar.</p>
+                <div class="hero-buttons">
+                    <a href="projeler.html" class="btn-primary">Projeleri İncele</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="slider-btn prev-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="slider-dots">
+            <div class="dot active" onclick="goToSlide(0)"></div>
+            <div class="dot" onclick="goToSlide(1)"></div>
+            <div class="dot" onclick="goToSlide(2)"></div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p>
-    </footer>
+    <section id="galeri" class="showcase-section container">
+        <h2 class="section-title">Sahadaki Gücümüz</h2>
+        </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
