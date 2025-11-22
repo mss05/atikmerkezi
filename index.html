@@ -12,7 +12,9 @@
 
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo-wrapper"><img src="yeni-logo.png" alt="Logo" class="nav-logo"></div>
+            <div class="logo-wrapper">
+                <img src="yeni-logo.png" alt="Logo" class="nav-logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Ana Sayfa</a></li>
                 <li><a href="hakkimizda.html">Hikayemiz</a></li>
@@ -70,9 +72,84 @@
         </div>
     </section>
 
-    <section id="galeri" class="showcase-section container">
-        <h2 class="section-title">Sahadaki Gücümüz</h2>
-        </section>
+    <section id="galeri" class="showcase-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Farkındalık Yaratıyoruz</h2>
+                <p class="section-desc">Gaziantep sokaklarında başlattığımız değişim rüzgarı.</p>
+            </div>
+
+            <div class="video-container scroll-reveal">
+                <div class="video-wrapper">
+                    <video controls poster="gaziantep1.jpg"> <source src="tramvay-reklam.mp4" type="video/mp4">
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                </div>
+                <div class="video-content">
+                    <h3>Tramvay Giydirme Kampanyası</h3>
+                    <p>Şehrin en işlek noktalarında, geri dönüşüm emekçilerinin yüzlerini ve hikayelerini paylaşıyoruz. Onlar "kağıtçı" değil, bu şehrin dönüşüm kahramanları.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-preview">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Sahadaki Eylemlerimiz</h2>
+            
+            <div class="cards-grid">
+                <div class="feature-card scroll-reveal">
+                    <div class="img-holder"><img src="donusum-yuvas.jpg" alt="Dönüşüm Yuvası"></div>
+                    <div class="text-holder">
+                        <h4>Dönüşüm Yuvası</h4>
+                        <p>Toplum merkezi, eğitim alanı ve üretim atölyesi.</p>
+                        <a href="projeler.html" class="link-arrow">Detaylar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="feature-card scroll-reveal delay-1">
+                    <div class="img-holder"><img src="akilli-kutu.jpg" alt="Akıllı Kutu"></div>
+                    <div class="text-holder">
+                        <h4>Akıllı Atık Kutusu</h4>
+                        <p>Puan kazandıran teknolojik dönüşüm noktaları.</p>
+                        <a href="projeler.html" class="link-arrow">Detaylar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="feature-card scroll-reveal delay-2">
+                    <div class="img-holder"><img src="modern-arac.jpg" alt="Modern Araç"></div>
+                    <div class="text-holder">
+                        <h4>Modern Araçlar</h4>
+                        <p>Çevre dostu ve hijyenik toplama filosu.</p>
+                        <a href="projeler.html" class="link-arrow">Detaylar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apps" class="cta-section">
+        <div class="container">
+            <div class="cta-content scroll-reveal">
+                <h2>Teknolojiyi İyilik İçin Kullan</h2>
+                <p>İster atık bildir, ister kazanç sağla. Senin için bir uygulamamız var.</p>
+                <div class="cta-buttons">
+                    <a href="https://mss05.github.io/vatandasuygulama/" target="_blank" class="btn-white">
+                        <i class="fas fa-user"></i> Vatandaş App
+                    </a>
+                    <a href="https://mss05.github.io/iscidousum/" target="_blank" class="btn-transparent">
+                        <i class="fas fa-hard-hat"></i> İşçi App
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gaziantep Dönüşüm Hareketi - PUB301 Projesi.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
