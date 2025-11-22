@@ -1,211 +1,30 @@
-:root {
-    --primary-green: #2e7d32;
-    --dark-green: #1b5e20;
-    --accent-yellow: #fbc02d;
-    --text-color: #333;
-    --bg-light: #f4f9f4;
-}
+/* --- YENİ EKLENEN STİLLER --- */
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Kampanya Aşamaları Kartları */
+.phases-section { padding: 60px 20px; text-align: center; }
+.phases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
+.phase-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+.phase-card:hover { transform: translateY(-5px); }
+.icon-box { font-size: 2.5rem; color: var(--primary-green); margin-bottom: 15px; }
 
-body {
-    font-family: 'Outfit', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg-light);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+/* App Tanıtım Alanı */
+.app-showcase { background: #e8f5e9; padding: 80px 20px; text-align: center; margin-top: 40px; }
+.app-desc { max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; color: #555; }
+.app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+.app-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: 0.3s; border: 2px solid transparent; }
+.app-card:hover { border-color: var(--primary-green); transform: translateY(-5px); }
+.app-card.highlight { border-color: #fbc02d; }
+.app-icon { font-size: 3rem; margin-bottom: 20px; color: var(--primary-green); }
+.highlight .app-icon { color: #f9a825; }
+.btn-app { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #333; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; }
+.btn-app:hover { background: var(--primary-green); }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navbar Tasarımı */
-.navbar {
-    background-color: var(--primary-green);
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    height: auto;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* LOGO DÜZENLEMESİ BURADA */
-.logo-wrapper {
-    background-color: white; /* Beyaz kutu */
-    padding: 10px 20px;
-    border-radius: 12px; /* Köşeleri yuvarla */
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    max-width: 300px; /* Logonun kaplayabileceği maksimum alan */ 
-}
-
-.nav-logo {
-    height: 70px; /* Logo yüksekliği */
-    width: auto;
-    display: block;
-    object-fit: contain;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding-bottom: 5px;
-    transition: all 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: var(--accent-yellow);
-    border-bottom: 2px solid var(--accent-yellow);
-}
-
-/* Sayfa Başlıkları */
-.page-header {
-    background-color: var(--dark-green);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.content-section {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
-}
-
-/* Hero Alanı (Ana Sayfa) */
-.hero {
-    height: 80vh;
-    background-image: url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content { position: relative; z-index: 2; }
-
-.hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
-.hero p { font-size: 1.5rem; margin-bottom: 30px; }
-
-.btn-primary {
-    background-color: var(--accent-yellow);
-    color: var(--dark-green);
-    padding: 15px 40px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: transform 0.3s;
-}
-.btn-primary:hover { transform: scale(1.05); }
-
-/* Projeler Izgarası */
-.projects-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-.project-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-.project-card:hover { transform: translateY(-10px); }
-
-.project-img { width: 100%; height: 250px; object-fit: cover; }
-.project-info { padding: 20px; }
-.project-info h3 { color: var(--primary-green); margin-bottom: 10px; }
-
-/* İstatistikler */
-.stats-section { margin-bottom: 50px; }
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.stat-card {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.progress-container {
-    background: #eee;
-    border-radius: 20px;
-    height: 30px;
-    margin: 20px 0;
-    overflow: hidden;
-}
-.progress-bar {
-    background: var(--primary-green);
-    height: 100%;
-    width: 0%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: width 2s;
-}
-.progress-text { color: white; font-weight: bold; }
-
-.number-counter { font-size: 3rem; color: var(--primary-green); font-weight: bold; }
-.unit { font-size: 1.5rem; color: #666; }
-
-footer {
-    margin-top: auto;
-    background: var(--dark-green);
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-/* İstatistik Sayfası Ekcilları */
-.icon-box {
-    font-size: 2.5rem;
-    color: var(--accent-yellow);
-    margin-bottom: 15px;
-}
-
-.stat-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+/* Bütçe Tablosu */
+.budget-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); overflow-x: auto; }
+.budget-table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 600px; }
+.budget-table th, .budget-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+.budget-table th { background-color: var(--primary-green); color: white; }
+.budget-table tr:hover { background-color: #f9f9f9; }
+.budget-table tfoot { background-color: #333; color: white; font-size: 1.1rem; }
+.goal-list { text-align: left; max-width: 800px; margin: 0 auto; list-style: none; }
+.goal-list li { background: #f1f8e9; margin: 10px 0; padding: 15px; border-left: 5px solid var(--primary-green); border-radius: 5px; }
