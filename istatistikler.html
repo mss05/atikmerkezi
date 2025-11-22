@@ -4,64 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veriler | Gaziantep Dönüşüm</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #2e7d32; --dark: #1b5e20; --bg: #f4f9f4; --text: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); }
+        .container { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
+        
+        .navbar { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { height: 55px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; }
+        .nav-links a.active { color: var(--primary); }
+
+        .page-header { background: var(--dark); color: white; padding: 50px 0; text-align: center; margin-bottom: 40px; }
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; padding-bottom: 60px; }
+        .stat-card { background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .icon-top { font-size: 2.5rem; color: #fbc02d; margin-bottom: 20px; }
+        .stat-card h3 { margin-bottom: 15px; color: #333; }
+        .big-number { font-size: 3.5rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+        .unit { font-size: 1.5rem; color: #666; }
+        .progress-bar { background: #eee; height: 25px; border-radius: 15px; overflow: hidden; margin-bottom: 10px; }
+        .fill { background: var(--primary); height: 100%; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
+
+        footer { background: #111; color: #888; text-align: center; padding: 30px 0; margin-top: auto; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo-wrapper"><img src="yeni-logo.png" alt="Logo" class="nav-logo"></div>
+            <img src="yeni-logo.png" alt="Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="hakkimizda.html">Hikayemiz</a></li>
                 <li><a href="projeler.html">Eylemler</a></li>
-                <li><a href="istatistikler.html" class="active">Şeffaflık</a></li>
+                <li><a href="istatistikler.html" class="active">Veriler</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="page-header" style="background-color: #1b5e20;">
+    <section class="page-header">
         <div class="container">
             <h1>Canlı Dönüşüm Verileri</h1>
-            <p style="opacity: 0.9;">Şeffaflık ilkemiz gereği, sahadan gelen haftalık verileri anlık paylaşıyoruz.</p>
+            <p>Şeffaflık ilkemiz gereği, sahadan gelen haftalık verileri anlık paylaşıyoruz.</p>
         </div>
     </section>
 
-    <section class="stats-container container">
-        <div class="stat-card">
-            <div class="icon-top yellow"><i class="fas fa-chart-pie"></i></div>
-            <h3>Gelen Atığın Dönüşüm Oranı</h3>
-            <div class="progress-wrapper">
-                <div class="bar" style="width: 82%">82%</div>
+    <section class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="icon-top"><i class="fas fa-chart-pie"></i></div>
+                <h3>Gelen Atığın Dönüşüm Oranı</h3>
+                <div class="progress-bar"><div class="fill" style="width: 82%">82%</div></div>
+                <p>Tesisimize giren atığın %82'si hammaddeye dönüştürüldü.</p>
             </div>
-            <p>Tesisimize giren atığın %82'si başarıyla hammaddeye dönüştürüldü.</p>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon-top yellow"><i class="fas fa-users-cog"></i></div>
-            <h3>Bu Hafta İşlenen Atık</h3>
-            <div class="big-number">1.250 <span class="unit">TON</span></div>
-            <p>Kahraman işçilerimizin bu hafta ayrıştırıp ekonomiye kazandırdığı miktar.</p>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon-top yellow"><i class="fas fa-lira-sign"></i></div>
-            <h3>Haftalık Ekonomik Değer</h3>
-            <div class="big-number">345.000 <span class="unit">₺</span></div>
-            <p>Bu hafta geri kazanılan atıkların piyasa değeri ve sağlanan tasarruf.</p>
-        </div>
-
-        <div class="stat-card">
-            <div class="icon-top yellow"><i class="fas fa-globe-europe"></i></div>
-            <h3>Toplam Kurtarılan Atık</h3>
-            <div class="big-number">61.500 <span class="unit">TON</span></div>
-            <p>Proje başlangıcından bugüne kadar işlenen toplam atık miktarı.</p>
+            <div class="stat-card">
+                <div class="icon-top"><i class="fas fa-users-cog"></i></div>
+                <h3>Bu Hafta İşlenen Atık</h3>
+                <div class="big-number">1.250 <span class="unit">TON</span></div>
+                <p>Kahraman işçilerimizin bu hafta ayrıştırıp ekonomiye kazandırdığı miktar.</p>
+            </div>
+            <div class="stat-card">
+                <div class="icon-top"><i class="fas fa-lira-sign"></i></div>
+                <h3>Haftalık Ekonomik Değer</h3>
+                <div class="big-number">345.000 <span class="unit">₺</span></div>
+                <p>Bu hafta geri kazanılan atıkların piyasa değeri.</p>
+            </div>
+            <div class="stat-card">
+                <div class="icon-top"><i class="fas fa-globe-europe"></i></div>
+                <h3>Toplam Kurtarılan Atık</h3>
+                <div class="big-number">61.500 <span class="unit">TON</span></div>
+                <p>Proje başlangıcından bugüne kadar işlenen toplam miktar.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p>
-    </footer>
+    <footer><p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p></footer>
 </body>
 </html>
