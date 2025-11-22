@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eylemler | Gaziantep Dönüşüm</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2e7d32; --dark: #1b5e20; --bg: #f9f9f9; --text: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; color: var(--text); background-color: var(--bg); }
+        .container { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
+        
+        .navbar { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { height: 55px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; }
+        .nav-links a.active { color: var(--primary); }
+
+        .page-header { background: var(--dark); color: white; padding: 50px 0; text-align: center; }
+        
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 60px 0; }
+        .project-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-card img { width: 100%; height: 220px; object-fit: cover; }
+        .p-info { padding: 25px; text-align: center; }
+        .p-info h3 { color: var(--primary); margin-bottom: 10px; }
+        
+        footer { background: #111; color: #888; text-align: center; padding: 30px 0; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo-wrapper"><img src="yeni-logo.png" alt="Logo" class="nav-logo"></div>
+            <img src="yeni-logo.png" alt="Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="hakkimizda.html">Hikayemiz</a></li>
                 <li><a href="projeler.html" class="active">Eylemler</a></li>
-                <li><a href="istatistikler.html">Şeffaflık</a></li>
+                <li><a href="istatistikler.html">Veriler</a></li>
             </ul>
         </div>
     </nav>
@@ -24,45 +46,43 @@
     <section class="page-header">
         <div class="container">
             <h1>Sahadaki Eylemlerimiz</h1>
+            <p>Projelerimizle Gaziantep'in çehresini değiştiriyoruz.</p>
         </div>
     </section>
 
-    <section class="projects-grid container">
-        <div class="project-card">
-            <img src="donusum-yuvas.jpg" alt="Dönüşüm Yuvası">
-            <div class="p-info">
-                <h3>Dönüşüm Yuvası</h3>
-                <p>Toplum merkezi, eğitim alanı ve üretim atölyesi.</p>
+    <section class="container">
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="donusum-yuvas.jpg" alt="Dönüşüm Yuvası">
+                <div class="p-info">
+                    <h3>Dönüşüm Yuvası</h3>
+                    <p>Toplum merkezi, çocuk eğitim alanı ve kadın üretim atölyesi.</p>
+                </div>
             </div>
-        </div>
-
-        <div class="project-card">
-            <img src="akilli-kutu.jpg" alt="Akıllı Kutu">
-            <div class="p-info">
-                <h3>Akıllı Atık Kutusu</h3>
-                <p>Şehrin her yerinde puan kazandıran teknolojik kutular.</p>
+            <div class="project-card">
+                <img src="akilli-kutu.jpg" alt="Akıllı Kutu">
+                <div class="p-info">
+                    <h3>Akıllı Atık Kutusu</h3>
+                    <p>Puan kazandıran, güneş enerjili teknolojik dönüşüm noktaları.</p>
+                </div>
             </div>
-        </div>
-
-        <div class="project-card">
-            <img src="modern-arac.jpg" alt="Modern Araç">
-            <div class="p-info">
-                <h3>Modern Araçlar</h3>
-                <p>Çevre dostu ve hijyenik toplama filosu.</p>
+            <div class="project-card">
+                <img src="modern-arac.jpg" alt="Modern Araç">
+                <div class="p-info">
+                    <h3>Modern Araçlar</h3>
+                    <p>Çevre dostu, sessiz ve hijyenik elektrikli toplama filosu.</p>
+                </div>
             </div>
-        </div>
-
-        <div class="project-card">
-            <img src="sertifika.jpg" alt="Sertifika">
-            <div class="p-info">
-                <h3>Adil Çalıştırma Belgesi</h3>
-                <p>İşçi haklarını koruyan işletmelere verdiğimiz güvence.</p>
+            <div class="project-card">
+                <img src="sertifika.jpg" alt="Sertifika">
+                <div class="p-info">
+                    <h3>Adil Çalıştırma Sertifikası</h3>
+                    <p>İşçi haklarını ve güvenliğini garanti altına alan standartlar.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p>
-    </footer>
+    <footer><p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p></footer>
 </body>
 </html>
