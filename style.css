@@ -41,17 +41,19 @@ body {
 /* LOGO DÜZENLEMESİ BURADA */
 .logo-wrapper {
     background-color: white; /* Beyaz kutu */
-    padding: 5px 15px;
-    border-radius: 10px; /* Köşeleri yuvarla */
+    padding: 10px 20px;
+    border-radius: 12px; /* Köşeleri yuvarla */
     display: flex;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 300px; /* Logonun kaplayabileceği maksimum alan */ 
 }
 
 .nav-logo {
-    height: 50px; /* Logo yüksekliği */
+    height: 85px; /* Logo yüksekliği */
     width: auto;
     display: block;
+    object-fit: contain;
 }
 
 .nav-links {
