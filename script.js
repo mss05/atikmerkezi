@@ -1,29 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.count');
-    const bars = document.querySelectorAll('.progress-bar');
+window.addEventListener('scroll', reveal);
 
-    // Sayı animasyonu
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const duration = 2000;
-        const increment = target / (duration / 16);
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
 
-        let current = 0;
-        const updateCount = () => {
-            current += increment;
-            if (current < target) {
-                counter.innerText = Math.ceil(current).toLocaleString('tr-TR');
-                requestAnimationFrame(updateCount);
-            } else {
-                counter.innerText = target.toLocaleString('tr-TR');
-            }
-        };
-        updateCount();
-    });
+    for(var i = 0; i < reveals.length; i++) {
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
 
-    // Progress bar animasyonu
-    bars.forEach(bar => {
-        const target = bar.getAttribute('data-target');
-        bar.style.width = target + '%';
-    });
-});
+        if(revealtop < windowheight - revealpoint) {
+            reveals[i].classList.add('active');
+        } else {
+            reveals[i].classList.remove('active');
+        }
+    }
+}
