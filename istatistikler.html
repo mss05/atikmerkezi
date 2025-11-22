@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Şeffaflık | Bütçe ve Veriler</title>
+    <title>Veriler | Gaziantep Dönüşüm</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -13,75 +14,49 @@
             <div class="logo-wrapper"><img src="yeni-logo.png" alt="Logo" class="nav-logo"></div>
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html">Hikayemiz</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="projeler.html">Eylemler</a></li>
-                <li><a href="istatistikler.html" class="active">Şeffaflık</a></li>
+                <li><a href="istatistikler.html" class="active">Veriler</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="page-header">
+    <section class="page-header" style="background-color: #1b5e20;">
         <div class="container">
-            <h1>Proje Bütçesi ve Hedefler</h1>
-            <p>Kaynaklarımızı nasıl kullanacağımızı şeffaflıkla paylaşıyoruz.</p>
+            <h1>Canlı Dönüşüm Verileri</h1>
+            <p style="opacity: 0.9;">Şeffaflık ilkemiz gereği, sahadan gelen haftalık verileri anlık paylaşıyoruz.</p>
         </div>
     </section>
 
-    <section class="stats-section container">
-        <div class="budget-container">
-            <h2 class="section-title">Tahmini Bütçe Planı</h2>
-            <table class="budget-table">
-                <thead>
-                    <tr>
-                        <th>Kalem (Gider Türü)</th>
-                        <th>Detaylar</th>
-                        <th>Tahmini Maliyet (TL)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Teknoloji ve Yazılım</td>
-                        <td>Mobil Uygulama (İşçi/Vatandaş) & Web Sitesi</td>
-                        <td>600.000 - 900.000 ₺</td>
-                    </tr>
-                    <tr>
-                        <td>Medya ve Prodüksiyon</td>
-                        <td>Kamu spotu, Belgesel, Sosyal Medya</td>
-                        <td>350.000 - 550.000 ₺</td>
-                    </tr>
-                    <tr>
-                        <td>Açık Hava Reklam</td>
-                        <td>Tramvay giydirme, Billboard, Sergi</td>
-                        <td>200.000 - 350.000 ₺</td>
-                    </tr>
-                    <tr>
-                        <td>Fiziksel Tesis & Araç</td>
-                        <td>Dönüşüm Yuvası, Modern Araçlar (10 adet)</td>
-                        <td>750.000 - 1.200.000 ₺</td>
-                    </tr>
-                    <tr>
-                        <td>İnsan Kaynakları</td>
-                        <td>Koordinatör, Saha Ekibi (6 Ay)</td>
-                        <td>600.000 - 800.000 ₺</td>
-                    </tr>
-                    <tr>
-                        <td>İşçi Destek Fonu</td>
-                        <td>Sağlık, Gıda, Barınma Yardımları</td>
-                        <td>500.000 - 1.000.000 ₺</td>
-                    </tr>
-                    <tr>
-                        <td>Akıllı Kutu Üretimi</td>
-                        <td>Prototip ve Sınırlı Üretim</td>
-                        <td>250.000 - 400.000 ₺</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2"><strong>TOPLAM TAHMİNİ BÜTÇE ARALIĞI</strong></td>
-                        <td><strong>~3.2M - 5.2M TL</strong></td>
-                    </tr>
-                </tfoot>
-            </table>
+    <section class="stats-container container">
+        <div class="stat-card">
+            <div class="icon-top yellow"><i class="fas fa-chart-pie"></i></div>
+            <h3>Gelen Atığın Dönüşüm Oranı</h3>
+            <div class="progress-wrapper">
+                <div class="bar" style="width: 82%">82%</div>
+            </div>
+            <p>Tesisimize giren atığın %82'si başarıyla hammaddeye dönüştürüldü.</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon-top yellow"><i class="fas fa-users-cog"></i></div>
+            <h3>Bu Hafta İşlenen Atık</h3>
+            <div class="big-number">1.250 <span class="unit">TON</span></div>
+            <p>Kahraman işçilerimizin bu hafta ayrıştırıp ekonomiye kazandırdığı miktar.</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon-top yellow"><i class="fas fa-lira-sign"></i></div>
+            <h3>Haftalık Ekonomik Değer</h3>
+            <div class="big-number">345.000 <span class="unit">₺</span></div>
+            <p>Bu hafta geri kazanılan atıkların piyasa değeri ve sağlanan tasarruf.</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon-top yellow"><i class="fas fa-globe-europe"></i></div>
+            <h3>Toplam Kurtarılan Atık</h3>
+            <div class="big-number">61.500 <span class="unit">TON</span></div>
+            <p>Proje başlangıcından bugüne kadar işlenen toplam atık miktarı.</p>
         </div>
     </section>
 
