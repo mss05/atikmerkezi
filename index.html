@@ -3,154 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaziantep Dönüşüm Hareketi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ana Sayfa | Gaziantep Dönüşüm</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root { --primary: #2e7d32; --dark: #1b5e20; --accent: #fbc02d; --text: #333; --bg: #f9f9f9; --white: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; color: var(--text); background-color: var(--bg); line-height: 1.6; }
+        .container { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
+        
+        /* NAVBAR */
+        .navbar { background: rgba(255,255,255,0.98); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { height: 55px; width: auto; object-fit: contain; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: 0.3s; position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-links a.active::after { content: ''; position: absolute; width: 100%; height: 3px; bottom: -5px; left: 0; background: var(--primary); }
+
+        /* HERO SLIDER */
+        .hero-slider { position: relative; width: 100%; height: 85vh; overflow: hidden; background: #333; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .slide.active { opacity: 1; z-index: 1; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2; }
+        .slide-content { position: relative; z-index: 3; color: white; max-width: 900px; }
+        .tagline { background: var(--accent); color: var(--dark); padding: 5px 15px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; display: inline-block; margin-bottom: 20px; }
+        .slide h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 800; line-height: 1.2; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .slide p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; }
+        
+        /* BUTONLAR */
+        .btn-primary { background: var(--primary); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; }
+        .btn-outline { border: 2px solid white; color: white; padding: 13px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; margin-left: 15px; }
+        .btn-primary:hover { transform: translateY(-5px); background: var(--dark); }
+        .btn-outline:hover { background: white; color: var(--dark); }
+
+        /* SLIDER OKLARI */
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.5); color: white; width: 50px; height: 50px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; z-index: 10; transition: 0.3s; }
+        .slider-btn:hover { background: white; color: var(--primary); }
+        .prev-btn { left: 30px; } .next-btn { right: 30px; }
+
+        /* GENEL BÖLÜMLER */
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 10px; }
+        .section-desc { color: #666; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        /* VİDEO ALANI */
+        .video-container { background: white; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        video { width: 100%; border-radius: 15px; }
+
+        /* APP ALANI */
+        .apps-section { background: linear-gradient(45deg, #1b5e20, #2e7d32); color: white; text-align: center; padding: 100px 0; }
+        .app-grid { display: flex; gap: 20px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .app-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 30px; border-radius: 20px; width: 300px; transition: 0.3s; }
+        .app-card:hover { background: white; color: var(--dark); transform: translateY(-10px); }
+        .app-icon { font-size: 3rem; margin-bottom: 20px; }
+        .btn-app { display: block; background: white; color: var(--primary); padding: 10px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        .app-card:hover .btn-app { background: var(--primary); color: white; }
+
+        footer { background: #111; color: #aaa; text-align: center; padding: 40px 0; margin-top: auto; }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo-wrapper">
-                <img src="yeni-logo.png" alt="Logo" class="nav-logo">
-            </div>
+            <img src="yeni-logo.png" alt="Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Ana Sayfa</a></li>
                 <li><a href="hakkimizda.html">Hikayemiz</a></li>
                 <li><a href="projeler.html">Eylemler</a></li>
-                <li><a href="istatistikler.html">Şeffaflık</a></li>
+                <li><a href="istatistikler.html">Veriler</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="hero-slider">
-        
         <div class="slide active" style="background-image: url('gaziantep1.jpg');">
             <div class="overlay"></div>
             <div class="slide-content container">
-                <span class="tagline">PUB301 PROJESİ</span>
+                <span class="tagline">DÖNÜŞÜM HAREKETİ</span>
                 <h1>Dönüşümün İşareti Gaziantep'te</h1>
                 <p>Görünmeyen emeği görünür kılıyor, geleceği birlikte dönüştürüyoruz.</p>
-                <div class="hero-buttons">
-                    <a href="#apps" class="btn-primary">Harekete Katıl</a>
-                </div>
+                <div class="hero-buttons"><a href="#apps" class="btn-primary">Harekete Katıl</a></div>
             </div>
         </div>
-
         <div class="slide" style="background-image: url('gaziantep2.jpg');">
             <div class="overlay"></div>
             <div class="slide-content container">
-                <span class="tagline">KÜLTÜR VE DOĞA</span>
+                <span class="tagline">KÜLTÜR & DOĞA</span>
                 <h1>Gaziantep: Gel, Gör, Tat, Katkı Yap</h1>
                 <p>Gastronomi şehri şimdi de yeşil dönüşümün başkenti oluyor.</p>
-                <div class="hero-buttons">
-                    <a href="hakkimizda.html" class="btn-outline">Hikayemiz</a>
-                </div>
+                <div class="hero-buttons"><a href="hakkimizda.html" class="btn-outline">Hikayemiz</a></div>
             </div>
         </div>
-
         <div class="slide" style="background-image: url('gaziantep3.jpg');">
             <div class="overlay"></div>
             <div class="slide-content container">
                 <span class="tagline">GİZLİ KAHRAMANLAR</span>
                 <h1>Geri Dönüşümün Kahramanları Burada!</h1>
                 <p>Sokak toplayıcıları değil, şehrin çevre mühendisleri onlar.</p>
-                <div class="hero-buttons">
-                    <a href="projeler.html" class="btn-primary">Projeleri İncele</a>
-                </div>
+                <div class="hero-buttons"><a href="projeler.html" class="btn-primary">Projeleri İncele</a></div>
             </div>
         </div>
-
-        <button class="slider-btn prev-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
-        <button class="slider-btn next-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
-
-        <div class="slider-dots">
-            <div class="dot active" onclick="goToSlide(0)"></div>
-            <div class="dot" onclick="goToSlide(1)"></div>
-            <div class="dot" onclick="goToSlide(2)"></div>
-        </div>
+        <button class="slider-btn prev-btn" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></button>
     </section>
 
-    <section id="galeri" class="showcase-section">
+    <section class="section">
         <div class="container">
-            <div class="section-header scroll-reveal">
+            <div class="section-header">
                 <h2 class="section-title">Farkındalık Yaratıyoruz</h2>
                 <p class="section-desc">Gaziantep sokaklarında başlattığımız değişim rüzgarı.</p>
             </div>
+            <div class="video-container">
+                <video controls poster="hero-bg.jpg">
+                    <source src="tramvay-reklam.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
 
-            <div class="video-container scroll-reveal">
-                <div class="video-wrapper">
-                    <video controls poster="gaziantep1.jpg"> <source src="tramvay-reklam.mp4" type="video/mp4">
-                        Tarayıcınız video etiketini desteklemiyor.
-                    </video>
+    <section id="apps" class="apps-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Teknolojiyi İyilik İçin Kullan</h2>
+            <p style="opacity: 0.9; margin-bottom: 40px;">Senin için geliştirdiğimiz uygulamaları indir.</p>
+            <div class="app-grid">
+                <div class="app-card">
+                    <i class="fas fa-user app-icon"></i>
+                    <h3>Vatandaş Paneli</h3>
+                    <p>Atık bildir, puan topla, doğayı koru.</p>
+                    <a href="https://mss05.github.io/vatandasuygulama/" target="_blank" class="btn-app">Uygulamaya Git</a>
                 </div>
-                <div class="video-content">
-                    <h3>Tramvay Giydirme Kampanyası</h3>
-                    <p>Şehrin en işlek noktalarında, geri dönüşüm emekçilerinin yüzlerini ve hikayelerini paylaşıyoruz. Onlar "kağıtçı" değil, bu şehrin dönüşüm kahramanları.</p>
+                <div class="app-card">
+                    <i class="fas fa-hard-hat app-icon"></i>
+                    <h3>Emekçi Paneli</h3>
+                    <p>Rota planla, kazancını gör, sosyalleş.</p>
+                    <a href="https://mss05.github.io/iscidousum/" target="_blank" class="btn-app">Uygulamaya Git</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="projects-preview">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Sahadaki Eylemlerimiz</h2>
-            
-            <div class="cards-grid">
-                <div class="feature-card scroll-reveal">
-                    <div class="img-holder"><img src="donusum-yuvas.jpg" alt="Dönüşüm Yuvası"></div>
-                    <div class="text-holder">
-                        <h4>Dönüşüm Yuvası</h4>
-                        <p>Toplum merkezi, eğitim alanı ve üretim atölyesi.</p>
-                        <a href="projeler.html" class="link-arrow">Detaylar <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+    <footer><div class="container"><p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p></div></footer>
 
-                <div class="feature-card scroll-reveal delay-1">
-                    <div class="img-holder"><img src="akilli-kutu.jpg" alt="Akıllı Kutu"></div>
-                    <div class="text-holder">
-                        <h4>Akıllı Atık Kutusu</h4>
-                        <p>Puan kazandıran teknolojik dönüşüm noktaları.</p>
-                        <a href="projeler.html" class="link-arrow">Detaylar <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="feature-card scroll-reveal delay-2">
-                    <div class="img-holder"><img src="modern-arac.jpg" alt="Modern Araç"></div>
-                    <div class="text-holder">
-                        <h4>Modern Araçlar</h4>
-                        <p>Çevre dostu ve hijyenik toplama filosu.</p>
-                        <a href="projeler.html" class="link-arrow">Detaylar <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="apps" class="cta-section">
-        <div class="container">
-            <div class="cta-content scroll-reveal">
-                <h2>Teknolojiyi İyilik İçin Kullan</h2>
-                <p>İster atık bildir, ister kazanç sağla. Senin için bir uygulamamız var.</p>
-                <div class="cta-buttons">
-                    <a href="https://mss05.github.io/vatandasuygulama/" target="_blank" class="btn-white">
-                        <i class="fas fa-user"></i> Vatandaş App
-                    </a>
-                    <a href="https://mss05.github.io/iscidousum/" target="_blank" class="btn-transparent">
-                        <i class="fas fa-hard-hat"></i> İşçi App
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Gaziantep Dönüşüm Hareketi - PUB301 Projesi.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlides(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slideIndex = (n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+        function plusSlides(n) { showSlides(slideIndex + n); }
+        setInterval(() => { plusSlides(1); }, 5000);
+    </script>
 </body>
 </html>
