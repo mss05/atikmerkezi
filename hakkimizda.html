@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hikayemiz | Gaziantep Dönüşüm</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root { --primary: #2e7d32; --dark: #1b5e20; --bg: #f9f9f9; --text: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; color: var(--text); background-color: var(--bg); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        .navbar { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { height: 55px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; }
+        .nav-links a.active { color: var(--primary); }
+
+        .page-header { background: var(--dark); color: white; padding: 60px 0; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        
+        .content-section { padding: 60px 0; }
+        .content-box { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-left: 5px solid var(--primary); }
+        .content-box h2 { color: var(--dark); margin-bottom: 15px; font-size: 1.8rem; }
+        .goal-list li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .goal-list li::before { content: '✔'; color: var(--primary); position: absolute; left: 0; }
+
+        footer { background: #111; color: #888; text-align: center; padding: 30px 0; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo-wrapper"><img src="yeni-logo.png" alt="Logo" class="nav-logo"></div>
+            <img src="yeni-logo.png" alt="Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="hakkimizda.html" class="active">Hikayemiz</a></li>
                 <li><a href="projeler.html">Eylemler</a></li>
-                <li><a href="istatistikler.html">Şeffaflık</a></li>
+                <li><a href="istatistikler.html">Veriler</a></li>
             </ul>
         </div>
     </nav>
@@ -24,23 +48,27 @@
     <section class="page-header">
         <div class="container">
             <h1>Görünmez Kahramanlar</h1>
-            <p>Emeklerine saygı, geleceğe katkı.</p>
+            <p>Geri dönüşümün kalbindeki emeği onurlandırmak için buradayız.</p>
         </div>
     </section>
 
-    <section class="text-content container">
+    <section class="content-section container">
         <div class="content-box">
             <h2>Problem: Görünmeyen Emek</h2>
-            <p>Gaziantep'te geri dönüşüm sistemi, büyük ölçüde mülteci işçiler, kadınlar ve çocuklar gibi dezavantajlı grupların emeğiyle ayakta duruyor. Ancak bu emek "görünmez" kabul ediliyor.</p>
+            <p>Gaziantep'te geri dönüşüm sistemi, büyük ölçüde mülteci işçiler, kadınlar ve çocuklar gibi dezavantajlı grupların emeğiyle ayakta duruyor. Ancak bu emek "görünmez" kabul ediliyor ve çalışma koşulları insani standartların altında kalıyor.</p>
         </div>
+
         <div class="content-box">
             <h2>Hedefimiz</h2>
-            <p>Biz bu projeyle; işçileri görünür kılmak, onlara 'Adil Çalıştırma Sertifikası' ile güvence sağlamak ve teknolojiyi kullanarak (Akıllı Kutular, Mobil App) Gaziantep halkını bu sürece dahil etmek istiyoruz.</p>
+            <ul class="goal-list">
+                <li><strong>KORUMA:</strong> Kırılgan grupları (kadın, çocuk, mülteci) olumsuz etkilerden korumak.</li>
+                <li><strong>İTİBAR:</strong> Geri dönüşüm işçilerinin toplumdaki imajını iyileştirmek ve saygınlık kazandırmak.</li>
+                <li><strong>GÜVENLİ İŞ:</strong> "Adil Çalıştırma Sertifikası" ile güvenli ve sağlıklı çalışma ortamları yaratmak.</li>
+                <li><strong>TEKNOLOJİ:</strong> Mobil uygulamalarla süreci şeffaf ve verimli hale getirmek.</li>
+            </ul>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p>
-    </footer>
+    <footer><p>&copy; 2025 Gaziantep Dönüşüm Hareketi.</p></footer>
 </body>
 </html>
